@@ -1,0 +1,24 @@
+# Ignore desktop app outputs
+dist-app/
+
+# Ignore node_modules & binary caches
+node_modules/
+client/node_modules/
+server/node_modules/
+server/bin/
+
+# Ignore test and temporary files
+continuationResponse.json
+correctContinuationResponse.json
+playlistData.json
+rawItem71.json
+server/test_*
+
+# Ignore internal agent config
+.agents/
+.gemini/
+
+# Documentation and plan artifacts
+walkthrough.md
+implementation_plan.md
+task.md
