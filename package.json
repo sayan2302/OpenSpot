@@ -1,6 +1,6 @@
 {
   "name": "@supasayan/openspot",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "OpenSpot — Cross-platform Music Downloader, Player & Song Lore Platform with High-Res Audio, Karaoke Synced Lyrics & Liquid Glass UI.",
   "main": "main.js",
   "productName": "OpenSpot",
