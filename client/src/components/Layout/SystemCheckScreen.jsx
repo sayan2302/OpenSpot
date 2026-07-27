@@ -17,6 +17,7 @@ export default function SystemCheckScreen({ status, error, onRetry }) {
       <div className="system-check-card liquid-glass">
         {isDownloading ? (
           <div className="status-checking">
+            <img src="/openspot.png" alt="OpenSpot Logo" className="system-check-logo" />
             <Loader2 className="spinner checking-spinner" size={60} />
             <h2>Setting Up Dependencies</h2>
             <p className="status-text">

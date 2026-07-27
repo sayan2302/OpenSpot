@@ -32,6 +32,13 @@
   gap: 1.5rem;
 }
 
+.system-check-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(99, 102, 241, 0.5));
+}
+
 .checking-spinner {
   color: var(--accent-primary);
   animation: spin 1.2s linear infinite;

@@ -1,9 +1,12 @@
 {
   "name": "@supasayan/openspot",
-  "version": "1.0.31",
+  "version": "1.0.2",
   "description": "OpenSpot — Cross-platform Music Downloader, Player & Song Lore Platform with High-Res Audio, Karaoke Synced Lyrics & Liquid Glass UI.",
   "main": "main.js",
   "productName": "OpenSpot",
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "openspot": "bin/cli.js",
     "openspot-cli": "bin/cli.js"
@@ -26,12 +29,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sayan2302/YTMDownloader.git"
+    "url": "git+https://github.com/sayan2302/OpenSpot.git"
   },
   "bugs": {
-    "url": "https://github.com/sayan2302/YTMDownloader/issues"
+    "url": "https://github.com/sayan2302/OpenSpot/issues"
   },
-  "homepage": "https://github.com/sayan2302/YTMDownloader#readme",
+  "homepage": "https://github.com/sayan2302/OpenSpot#readme",
   "files": [
     "bin",
     "server/*.js",
@@ -43,10 +46,11 @@
     "README.md"
   ],
   "dependencies": {
-    "express": "^4.21.0",
+    "@supasayan/openspot": "^1.0.1",
     "cors": "^2.8.5",
-    "ytmusic-api": "^5.0.0",
-    "ffmpeg-static": "^5.2.0"
+    "express": "^4.21.0",
+    "ffmpeg-static": "^5.2.0",
+    "ytmusic-api": "^5.0.0"
   },
   "scripts": {
     "start": "npx concurrently \"npm run start --prefix server\" \"npm run dev --prefix client\"",
@@ -83,9 +87,12 @@
       "package.json"
     ]
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "devDependencies": {
-    "electron": "^43.1.0",
-    "electron-builder": "^26.15.3",
+    "electron": "^33.2.1",
+    "electron-builder": "^24.13.3",
     "wait-on": "^9.0.10"
   }
 }

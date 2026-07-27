@@ -16,7 +16,8 @@ export default function AboutPage({ systemStatus }) {
     <div className="about-page">
       <div className="about-hero liquid-glass">
         <div className="about-hero-logo">
-          <h2>YTM<span>Downloader</span></h2>
+          <img src="/openspot.png" alt="OpenSpot Logo" className="about-logo-img" />
+          <h2>Open<span>Spot</span></h2>
           <span className="version-badge">v{version}</span>
         </div>
         <p className="subtitle">

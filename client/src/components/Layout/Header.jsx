@@ -6,6 +6,10 @@ export default function Header({ activeTab, onTabChange, activeDownloadCount = 0
     <header className="app-header">
       <div className="header-content">
         <div className="logo">
+          <div className="logo-icon-wrapper">
+            <div className="metallic-sheen"></div>
+            <img src="/openspot.png" alt="OpenSpot Logo" className="logo-img" />
+          </div>
           <h2>Open<span>Spot</span></h2>
         </div>
         

@@ -28,10 +28,37 @@ function App() {
   const player = usePlayer();
 
   useEffect(() => {
+    let faviconEl = document.getElementById('app-favicon');
+    if (!faviconEl) {
+      faviconEl = document.createElement('link');
+      faviconEl.id = 'app-favicon';
+      faviconEl.rel = 'icon';
+      document.head.appendChild(faviconEl);
+    }
+
     if (player.currentSong) {
-      const statusIcon = player.isPlaying ? '▶ ' : '⏸ ';
-      document.title = `${statusIcon}${player.currentSong.title} - OpenSpot`;
+      if (player.isPlaying) {
+        faviconEl.type = 'image/svg+xml';
+        faviconEl.href = `data:image/svg+xml,${encodeURIComponent(`
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="16" fill="#6366f1"/>
+            <path d="M12 9l11 7-11 7V9z" fill="#ffffff"/>
+          </svg>
+        `).trim()}`;
+        document.title = `${player.currentSong.title} - OpenSpot`;
+      } else {
+        faviconEl.type = 'image/svg+xml';
+        faviconEl.href = `data:image/svg+xml,${encodeURIComponent(`
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="16" fill="#4f46e5"/>
+            <path d="M10 9h4v14h-4V9zm8 0h4v14h-4V9z" fill="#ffffff"/>
+          </svg>
+        `).trim()}`;
+        document.title = `${player.currentSong.title} - OpenSpot`;
+      }
     } else {
+      faviconEl.type = 'image/png';
+      faviconEl.href = '/openspot.png';
       document.title = 'OpenSpot';
     }
   }, [player.currentSong, player.isPlaying]);

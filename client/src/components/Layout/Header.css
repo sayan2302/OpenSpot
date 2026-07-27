@@ -17,6 +17,82 @@
   justify-content: space-between;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.logo-icon-wrapper {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Metallic diagonal light glint (sweeps across surface on hover) */
+.metallic-sheen {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.25) 46%,
+    rgba(255, 255, 255, 0.85) 50%,
+    rgba(255, 255, 255, 0.25) 54%,
+    transparent 60%
+  );
+  transform: translate3d(-100%, -100%, 0);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.logo:hover .metallic-sheen {
+  opacity: 1;
+  animation: metallicGlint 2.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.logo-img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  transition: filter 0.35s ease;
+}
+
+.logo:hover .logo-img {
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
+}
+
+@keyframes metallicGlint {
+  0% {
+    transform: translate3d(-100%, -100%, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(100%, 100%, 0);
+    opacity: 0;
+  }
+}
+
 .logo h2 {
   font-size: 1.5rem;
   font-weight: 700;

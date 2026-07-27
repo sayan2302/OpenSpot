@@ -28,6 +28,12 @@
   gap: 1rem;
 }
 
+.about-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
 .about-hero-logo h2 {
   font-size: 2.2rem;
   font-weight: 800;
